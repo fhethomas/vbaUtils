@@ -7,11 +7,11 @@ Below are a list of useful fragments of code that could prove useful.
 i Mod 35
 
 # Errors
-' Resumes next in Loop
+Resumes next in Loop 
 On Error Resume Next
-' Causes break in code
+Causes break in code
 On Error GoTo 0
-' Goes to specified section and runs code
+Goes to specified section and runs code
 On Error GoTo alertMsg
 alertMsg:
 	Msgbox(“Alert!”)
@@ -75,7 +75,7 @@ End If
 Stop
 
 # Frequently used Formulas
-‘Non-Data Analysis Regression
+Non-Data Analysis Regression
 Select 3 cells horizontally and press ctrl+Shift+Enter – gives x2+x+Constant
 =Linest(y-range,xrange^{1,2},TRUE,FALSE)
 Count of Unique Values
