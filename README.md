@@ -8,11 +8,17 @@ i Mod 35
 
 # Errors
 Resumes next in Loop 
+
 On Error Resume Next
+
 Causes break in code
+
 On Error GoTo 0
+
 Goes to specified section and runs code
+
 On Error GoTo alertMsg
+
 alertMsg:
 	Msgbox(“Alert!”)
 
