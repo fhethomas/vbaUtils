@@ -3,10 +3,18 @@ This repository contains useful and frequently used functions.
 
 Below are a list of useful fragments of code that could prove useful.
 
+# Get Username
+```
+strName =Environ("username")
+```
+
 # Modulo
+```
 i Mod 35
+```
 
 # Errors
+
 Resumes next in Loop 
 
 On Error Resume Next
