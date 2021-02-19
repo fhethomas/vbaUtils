@@ -117,6 +117,23 @@ x = Timer
 Debug.Print Timer - x
 ```
 
+# Pivot Table General use
+```
+For Each PT In sht.PivotTables        '<~~ Loop all pivot tables in worksheet
+      PT.HasAutoFormat = False	'<~~ Stop auto formatting
+      PT.PivotCache.Refresh	'<~~ Refresh
+      PT.PivotFields ("Sum")
+      PT.Calculation = xlPercentOfRow
+      PT.NumberFormat = "0,0%"
+Next PT
+```
+
+# Group - show lower level of group -or show all grouped
+```
+sht.Outline.ShowLevels 2  '<~~ shows level 2
+sht.Outline.ShowLevels RowLevels:=1, ColumnLevels:=1 '<~~ shows highest level (collapses group)
+```
+
 # Frequently used Formulas
 ## Non-Data Analysis Regression
 
