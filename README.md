@@ -193,3 +193,29 @@ Select 3 cells horizontally and press ctrl+Shift+Enter – gives x2+x+Constant
 2.	In the Manage box, select Excel Add-ins and then click Go.
 3.	In the Add-Ins available box, select the Analysis ToolPak check box, and then click OK.
 
+# DAX Notes
+
+## Sumif as a measure
+```
+sumif = SUMX(FILTER(TBL,TBL[Category]="Done"),Tbl[value])
+```
+
+## Sumifs for a column
+```
+SUMIFS = calculate(SUM(TBL[value]),FILTER(TBL,TBL[Gender]=EARLIER(TBL[Gender]) && TBL[Category] IN {"Good","Bad","Ugly"}),TBL[value])
+```
+
+## Countifs as measure
+```
+countifs = COUNTAX(filter(TBL,TBL[Category]="Done" && TBL[Include]=True),TBL[Category])
+```
+
+## AverageIf as measure
+```
+averageif = AVERAGEX(Filter(TBL,TBL[Category]="DOne"),[value])
+```
+
+## medianIf as measure
+```
+medianif = MEDIANX(Filter(TBL,TBL[Category]="Done"),[value])
+```
