@@ -18,7 +18,7 @@ Sub matchColumns()
     Set workrange = Range(wkSht2.Range("A1"), wkSht2.Range("A1").End(xlToRight))
     colCount = workrange.Count
     Set workrange = Range(wkSht1.Range("A1"), wkSht1.Range("A1").End(xlToRight))
-    Set colCountSht1 = workrange.Count
+    colCountSht1 = workrange.Count
     
     Set workrange = wkSht2.UsedRange
     rowCount = workrange.Rows.Count
