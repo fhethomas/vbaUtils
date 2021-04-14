@@ -1,0 +1,4 @@
+Function Eval(Ref As String)
+    Application.Volatile
+    Eval = Evaluate(Ref)
+End Function
