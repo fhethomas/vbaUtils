@@ -141,6 +141,12 @@ Select 3 cells horizontally and press ctrl+Shift+Enter – gives x2+x+Constant
 ```
 =Linest(y-range,xrange^{1,2},TRUE,FALSE)
 ```
+## Rank
+for last argument: 0 - descending, 1 - ascending
+```
+=RANK.AVG(a1,$a$1:$a$5,0)
+```
+
 
 ## Count of Unique Values
 ```
