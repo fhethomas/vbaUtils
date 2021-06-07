@@ -93,6 +93,17 @@ Split(“A brand new string”,” “)
 Wksht.range(“A1”).formula=”=Sum(B1:D1)”
 Wksht.range(“A1:A” & 50).filldown
 ```
+
+# Text to columns with any character
+```
+Set workrange = Range("A1:A5")
+delimTxt = "|"
+workrange.TextToColumns Destination:=workrange, DataType:=xlDelimited, _
+TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
+Semicolon:=False, Comma:=False, Space:=False, Other:=True, OtherChar _
+:=delimTxt
+```
+
 # Yes/No
 ```
 Dim Answ As Integer
