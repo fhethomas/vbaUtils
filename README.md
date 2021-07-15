@@ -231,7 +231,7 @@ for last argument: 0 - descending, 1 - ascending
 
 ## Sumif as a measure
 ```
-sumif = SUMX(FILTER(TBL,TBL[Category]="Done"),Tbl[value])
+sumif = SUMX(FILTER(TBL,TBL[Category]="Complete"),Tbl[value])
 ```
 
 ## Sumifs for a column
@@ -241,15 +241,22 @@ SUMIFS = calculate(SUM(TBL[value]),FILTER(TBL,TBL[Gender]=EARLIER(TBL[Gender]) &
 
 ## Countifs as measure
 ```
-countifs = COUNTAX(filter(TBL,TBL[Category]="Done" && TBL[Include]=True),TBL[Category])
+countifs = COUNTAX(filter(TBL,TBL[Category]="Complete" && TBL[Include]=True),TBL[Category])
 ```
 
 ## AverageIf as measure
 ```
-averageif = AVERAGEX(Filter(TBL,TBL[Category]="DOne"),[value])
+averageif = AVERAGEX(Filter(TBL,TBL[Category]="Complete"),[value])
 ```
 
 ## medianIf as measure
 ```
-medianif = MEDIANX(Filter(TBL,TBL[Category]="Done"),[value])
+medianif = MEDIANX(Filter(TBL,TBL[Category]="Complete"),[value])
 ```
+
+## percentage measure
+What percent are Complete?
+```
+PercentMeasure = COUNTAX(filter(Tbl,Tbl[Category]="Complete"),Tbl[Category])/COUNTA(Tbl[Category])
+```
+
