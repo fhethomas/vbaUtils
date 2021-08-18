@@ -259,4 +259,9 @@ What percent are Complete?
 ```
 PercentMeasure = COUNTAX(filter(Tbl,Tbl[Category]="Complete"),Tbl[Category])/COUNTA(Tbl[Category])
 ```
-
+## Count rows All Except
+Lets you count everything that has been filtered - you may need to have multiple columns if this is part of a graph
+In the below example we're counting the rows of where Table[Col1] = "Value 1", but we're trying to create a line graph with Table[Col2] on the X-Axis, so need to have that excluded too, or it will create a constant line
+```
+CountAllExcept = CALCULATE(COUNTrows(filter(Table,Table[Col1]="Value 1")),AllEXCEPT(Table,Table[Col1],Table[Col2]))
+```
