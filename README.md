@@ -265,3 +265,33 @@ In the below example we're counting the rows of where Table[Col1] = "Value 1", b
 ```
 CountAllExcept = CALCULATE(COUNTrows(filter(Table,Table[Col1]="Value 1")),AllEXCEPT(Table,Table[Col1],Table[Col2]))
 ```
+
+## Have a Slicer to switch between Measures
+
+Step 1 - create a table with the name of the measures you want like the below. To create this use (table will be called Selector):
+
+```
+Selector = UNION(ROW("Name","This period's sales","Code",1),ROW("Name","Year to date","Code",2),ROW("Name","Quarter to date","Code",3),ROW("Name","Same period last year","Code",4),ROW("Name","Cost","Code",5))
+```
+Will create a table like the below
+![image](https://user-images.githubusercontent.com/29797377/129887957-edf69404-dc10-4c74-a963-fcf463199d3a.png)
+
+Step 2 - Add a Measure to the above table (when you use a slicer on the name column of this table it'll affect your measures)
+```
+Selected Measure = SELECTEDVALUE('Selector'[Code],1)
+```
+Step 3 - In the table with your existing measures add the below measure - (this will be the value in whatever graph you create)
+
+```
+Sales All Measures =
+SWITCH(
+Selector[Selected Measure],
+1,[Sales],
+2,[Sales YTD],
+3,[Sales QTD],
+4,[Sales Same Period Last Year],
+5,[Cost]
+)
+```
+Step 4 - Add your 'Sales All Measures' as a value in your graph & add a slicer with 'Selected Measure' as the value
+
