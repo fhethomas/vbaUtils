@@ -236,7 +236,7 @@ sumif = SUMX(FILTER(TBL,TBL[Category]="Complete"),Tbl[value])
 
 ## Sumifs for a column
 ```
-SUMIFS = calculate(SUM(TBL[value]),FILTER(TBL,TBL[Gender]=EARLIER(TBL[Gender]) && TBL[Category] IN {"Good","Bad","Ugly"}),TBL[value])
+SUMIFS = calculate(SUM(TBL[value]),FILTER(TBL,TBL[Gender]=currentTbl[Gender] && TBL[Category] IN {"Good","Bad","Ugly"}),TBL[value])
 ```
 
 ## Countifs as measure
