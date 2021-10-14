@@ -229,6 +229,18 @@ for last argument: 0 - descending, 1 - ascending
 
 # DAX Notes
 
+## Create a measure to act as a percentage of a sub-total - in below split figures I wanted for a bar chart split by Gender
+```
+PercentageGenderFTE = 
+CALCULATE(
+	SUM(Staff[FTE]),
+	ALLSELECTED(Staff[Year])
+)/CALCULATE(
+	SUM(Staff[FTE]),
+	ALLEXCEPT(Staff,Staff[Year],Staff[Gender])
+)
+```
+
 ## Sumif as a measure
 ```
 sumif = SUMX(FILTER(TBL,TBL[Category]="Complete"),Tbl[value])
