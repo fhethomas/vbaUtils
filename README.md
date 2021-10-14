@@ -229,7 +229,8 @@ for last argument: 0 - descending, 1 - ascending
 
 # DAX Notes
 
-## Create a measure to act as a percentage of a sub-total - in below split figures I wanted for a bar chart split by Gender
+## Create a measure to act as a percentage of a sub-total
+### In below split figures I wanted for a bar chart split by Gender
 ```
 PercentageGenderFTE = 
 CALCULATE(
