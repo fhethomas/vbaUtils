@@ -13,6 +13,26 @@ strName =Environ("username")
 i Mod 35
 ```
 
+# Click into cell and hit enter
+```
+Sub clickAndEnter()
+	Dim wkSht As Worksheet
+	Set wkSht = Worksheets("Survey form")
+
+	Dim rCell As Range
+	Set rCells = Range(wkSht.Range("A1"), wkSht.Range("A1").End(xlDown))
+
+
+	Dim rowCount, iRow As Long
+	rowCount = rCells.Rows.Count
+
+	    For iRow = 2 To rowCount
+		Application.SendKeys "{F2}"
+		Application.SendKeys "{ENTER}"
+	    Next iRow
+
+```
+
 # Errors
 
 Resumes next in Loop 
