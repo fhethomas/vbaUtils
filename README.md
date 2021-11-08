@@ -30,7 +30,7 @@ Sub clickAndEnter()
 		Application.SendKeys "{F2}"
 		Application.SendKeys "{ENTER}"
 	    Next iRow
-
+End Sub
 ```
 
 # Errors
