@@ -328,3 +328,21 @@ Selector[Selected Measure],
 ```
 Step 4 - Add your 'Sales All Measures' as a value in your graph & add a slicer with 'Selected Measure' as the value
 
+## Summarize & Max of summarize
+
+In the below we create a summarised table - this is equivalent to Grouping by City and Year. In the second part the table taken as an argument is a filtered table, where we want to exclude "London"
+```
+SUMMARIZE(Staff,Staff[City],Staff[Year],"Turnover",Staff[Turnover])
+
+SUMMARIZE(FILTER(Staff, Staff[City]<>"London"),Staff[City],Staff[Year],"Turnover",Staff[Turnover])
+```
+
+In the below example we want to find the max turnover for each city and gender. This creates a Union table summarising by city, year & gender, year - then finds the maximum turnover. This can be used as one argument
+```
+MaxTurnover = 
+	MAXX(
+	UNION(
+		SUMMARIZE(FILTER(Staff, Staff[City]<>"Unknown"),Staff[City],Staff[Year],"Turnover",Staff[Turnover]),
+		SUMMARIZE(Staff,Staff[Gender],Staff[Year],"Turnover",Staff[Turnover]))
+		,[Turnover])
+```
