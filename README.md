@@ -328,6 +328,25 @@ Selector[Selected Measure],
 ```
 Step 4 - Add your 'Sales All Measures' as a value in your graph & add a slicer with 'Selected Measure' as the value
 
+Optional Extra - you can split out a graph using small multiples, so if you have a table called 'Slicer Table' organised like:
+
+### Selection	###Category
+Gender	F
+Gender	M
+Age Young
+Age Old
+
+```
+HeightCategorised= 
+VAR CategorySelection = SELECTEDVALUE('Slicer Table'[Selection],"Gender")
+RETURN
+SWITCH(
+    TRUE(),
+    CategorySelection="Gender",CALCULATE([AverageHeight],TREATAS(VALUES('Slicer Table'[Category]),Data[Gender])),
+    CategorySelection="Age",CALCULATE([AverageHeight],TREATAS(VALUES('Slicer Table'[Category]),Data[Age]))))
+)
+```
+
 ## Summarize & Max of summarize
 
 In the below we create a summarised table - this is equivalent to Grouping by City and Year. In the second part the table taken as an argument is a filtered table, where we want to exclude "London"
@@ -346,3 +365,4 @@ MaxTurnover =
 		SUMMARIZE(Staff,Staff[Gender],Staff[Year],"Turnover",Staff[Turnover]))
 		,[Turnover])
 ```
+
