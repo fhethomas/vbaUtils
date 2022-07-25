@@ -242,6 +242,12 @@ for last argument: 0 - descending, 1 - ascending
 =substitute(A1,”ReplacementString”,A2)
 ```
 
+## Format US to UK Date - assumes you've got the year
+```
+=IF(TYPE(A2)=2,DATE(RIGHT(a2,4),LEFT(A2,FIND("/",A2)-1),MID(A2,1+FIND("/",A2),FIND("/",SUBSTITUTE(A2,"/","",1))+1-(1+FIND("/",A2)))),DATE(RIGHT(a2,4),DAY(A2),MONTH(A2)))
+```
+
+
 ## Data Analysis
 1.	Click the File tab, click Options, and then click the Add-Ins category.
 2.	In the Manage box, select Excel Add-ins and then click Go.
