@@ -184,6 +184,16 @@ for last argument: 0 - descending, 1 - ascending
 =Sumproduct(1/countif(a2:a5,a2:a5))
 ```
 
+## Reverse String
+```
+=CONCAT(MID(A1,SEQUENCE(LEN(A1),,LEN(A1),-1),1))
+```
+
+## Get Last Name - find first space in reversed string
+```
+=RIGHT(A1,FIND(" ",CONCAT(MID(A1,SEQUENCE(LEN(A1),,LEN(A1),-1),1)))-1)
+```
+
 ## Weekday
 ```
 =text(A1,”dddd”)   - Where A1=01/01/2017
@@ -194,7 +204,7 @@ for last argument: 0 - descending, 1 - ascending
 =Edate(oldDate,12)
 ```
 
-## Array Formula
+## Array Formula - below is superseded by MAXIFS
 ```
 {=Max(If(A2:A4=”Dog”,B2:B4))}
 ```
