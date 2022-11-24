@@ -392,3 +392,13 @@ You then need to use that as a Slicer and somehow relate that to the table you a
 ```
 MonthsPrevious = (DATEDIFF([Date],edate(Max([Date]),1),MONTH)*-1)
 ```
+## Create a manual table
+```
+NewTable = UNION(
+		ROW("Row Number",1,"Animal","Cat","Special Ability","Scratch"),
+		ROW("Row Number",2,"Animal","Dog","Special Ability","Bark"),
+		ROW("Row Number",3,"Animal","Kraken","Special Ability","Engulf")
+		)
+```
+
+
