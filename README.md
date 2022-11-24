@@ -382,3 +382,13 @@ MaxTurnover =
 		,[Turnover])
 ```
 
+## Add a slider as a slicer
+You will probably need to add a table with a series. Below we create a table called DateParameters
+```
+DateParameters = GENERATESERIES(-37, -1, 1)
+```
+
+You then need to use that as a Slicer and somehow relate that to the table you are slicing. You might want to do it by adding a column with
+```
+MonthsPrevious = (DATEDIFF([Date],edate(Max([Date]),1),MONTH)*-1)
+```
