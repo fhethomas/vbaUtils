@@ -344,7 +344,19 @@ Selector[Selected Measure],
 ```
 Step 4 - Add your 'Sales All Measures' as a value in your graph & add a slicer with 'Selected Measure' as the value
 
-Optional Extra - you can split out a graph using small multiples, so if you have a table called 'Slicer Table' organised like:
+Optional Extra 1 - You can use your selected category to calculate a variable using a certain variable
+```
+Proportion (Dynamic) = 
+VAR CategorySelection = SELECTEDVALUE('SelectorTbl'[Selection],"Gender")
+RETURN
+SWITCH(
+    TRUE(),
+    CategorySelection="Age Group",CALCULATE([Proportion],TREATAS(VALUES('SelectorTbl'[Category]), DataTable[Age Group])),
+    CategorySelection="Gender",CALCULATE([Proportion],TREATAS(VALUES('SelectorTbl'[Category]), DataTable[Gender]))
+)
+```
+
+Optional Extra 2 - you can split out a graph using small multiples, so if you have a table called 'Slicer Table' organised like:
 
 ### Selection	###Category
 Gender	F
