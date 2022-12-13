@@ -412,6 +412,10 @@ NewTable = UNION(
 		ROW("Row Number",3,"Animal","Kraken","Special Ability","Engulf")
 		)
 ```
+OR
+```
+NewTable = DATATABLE("Animal",STRING,"Weight",DOUBLE,{{"Dog",55.5},{"Cat",32.4},{"Crocodile",165}})
+```
 
 ## Python Compatability issues with Python:
 
