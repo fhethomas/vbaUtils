@@ -199,7 +199,7 @@ for last argument: 0 - descending, 1 - ascending
 =text(A1,”dddd”)   - Where A1=01/01/2017
 ```
 
-## Add a Month
+## Add 12 Months
 ```
 =Edate(oldDate,12)
 ```
