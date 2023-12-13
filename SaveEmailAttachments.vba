@@ -6,7 +6,7 @@ folderDestStr = "\\My Documents\Test"
 
 ' *** Identify your file type below ***
 Dim fileTypeStr As String
-fileTypeStr = "docx"
+fileTypeStr = ".xlsx"
 Dim fileLengthInt As Integer 'length is defined by file type
 fileLengthInt = Len(fileTypeStr)
 
