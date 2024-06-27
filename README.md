@@ -151,6 +151,7 @@ Debug.Print Timer - x
 # Pivot Table General use
 ```
 For Each PT In sht.PivotTables        '<~~ Loop all pivot tables in worksheet
+      PT.ClearAllFilters '<~~ Clear filters from pivot table
       PT.HasAutoFormat = False	'<~~ Stop auto formatting
       PT.PivotCache.Refresh	'<~~ Refresh
       PT.PivotFields ("Sum")
