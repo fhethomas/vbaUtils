@@ -424,10 +424,11 @@ NewTable = DATATABLE("Animal",STRING,"Weight",DOUBLE,{{"Dog",55.5},{"Cat",32.4},
 - I then had to create an old conda of Python 3.5 and install all the packages there. I then had to change the 
 python package that Power BI uses to this old 3.5 version - named old_python_version. It'll be in
 C:\Users\Anaconda3\envs\old_python_3.5
+```
 	conda create --name old_python_version python=3.5 pip
 	conda activate old_python_version
 	pip install pandas
 	pip install numpy
 	pip install scipy
 	pip install matplotlib
-
+```
