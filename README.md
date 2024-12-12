@@ -258,6 +258,12 @@ for last argument: 0 - descending, 1 - ascending
 =IF(TYPE(A2)=2,DATE(RIGHT(a2,4),LEFT(A2,FIND("/",A2)-1),MID(A2,1+FIND("/",A2),FIND("/",SUBSTITUTE(A2,"/","",1))+1-(1+FIND("/",A2)))),DATE(RIGHT(a2,4),DAY(A2),MONTH(A2)))
 ```
 
+## Create a 5 year age bracket
+From an age i.e. 45 - converts its to 45-49
+```
+=FLOOR.MATH(A1/5)*5&"-"&FLOOR.MATH(A1/5+1)*5-1
+```
+
 
 ## Data Analysis
 1.	Click the File tab, click Options, and then click the Add-Ins category.
