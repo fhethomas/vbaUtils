@@ -12,6 +12,11 @@ strName =Environ("username")
 ```
 i Mod 35
 ```
+# Create array
+```
+Dim aiArr As Variant
+stringArr = Array(" AI ", "artificial intelligence", "artificial int")
+```
 
 # Click into cell and hit enter
 ```
