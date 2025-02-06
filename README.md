@@ -183,7 +183,10 @@ for last argument: 0 - descending, 1 - ascending
 ```
 =RANK.AVG(a1,$a$1:$a$5,0)
 ```
-
+## Sub-Total - shows sum of filtered rows
+```
+=SUBTOTAL(9,A2:A100)
+```
 
 ## Count of Unique Values
 ```
